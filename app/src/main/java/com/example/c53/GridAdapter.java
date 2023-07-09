@@ -9,10 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.c53.GridItem;
-import com.example.c53.HistoryActivity;
-import com.example.c53.R;
-
 import java.util.List;
 
 public class GridAdapter extends BaseAdapter {

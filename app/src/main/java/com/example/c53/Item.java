@@ -1,7 +1,5 @@
 package com.example.c53;
 
-import android.os.Parcelable;
-
 public class Item{
     String name;
     int img;

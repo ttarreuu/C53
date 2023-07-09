@@ -1,21 +1,16 @@
 package com.example.c53;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcelable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -79,6 +74,10 @@ public class DashboardFragment extends Fragment {
         CardView cardView2 = view.findViewById(R.id.cardview2);
         CardView cardView3 = view.findViewById(R.id.cardview3);
         CardView cardView4 = view.findViewById(R.id.cardview4);
+        CardView cardView5 = view.findViewById(R.id.cardview5);
+        CardView cardView6 = view.findViewById(R.id.cardview6);
+        CardView cardView7 = view.findViewById(R.id.cardview7);
+        CardView cardView8 = view.findViewById(R.id.cardview8);
 
         dashboardItems = new ArrayList<>();
 
@@ -86,8 +85,10 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Handle the click event for CardView 1
-                Item item = new Item("Clothes", R.drawable.img_1);
-                dashboardItems.add(item);
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Black T-Shirt");
+                intent.putExtra("image", R.drawable.img_1);
+                startActivity(intent);
             }
         });
 
@@ -95,8 +96,10 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Handle the click event for CardView 2
-                Item item = new Item("Shoes", R.drawable.img_2);
-                dashboardItems.add(item);
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Black T-Shirt Oversize");
+                intent.putExtra("image", R.drawable.img_2);
+                startActivity(intent);
             }
         });
 
@@ -104,8 +107,10 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Handle the click event for CardView 3
-                Item item = new Item("Accessories", R.drawable.img_3);
-                dashboardItems.add(item);
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "White T-Shirt");
+                intent.putExtra("image", R.drawable.img_3);
+                startActivity(intent);
             }
         });
 
@@ -113,8 +118,54 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Handle the click event for CardView 4
-                Item item = new Item("Others", R.drawable.img_4);
-                dashboardItems.add(item);
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Parka");
+                intent.putExtra("image", R.drawable.img_4);
+                startActivity(intent);
+            }
+        });
+
+        cardView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event for CardView 1
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Chinos");
+                intent.putExtra("image", R.drawable.img_5);
+                startActivity(intent);
+            }
+        });
+
+        cardView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event for CardView 2
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Black Pants");
+                intent.putExtra("image", R.drawable.img_7);
+                startActivity(intent);
+            }
+        });
+
+        cardView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event for CardView 3
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Brown Pants");
+                intent.putExtra("image", R.drawable.img_6);
+                startActivity(intent);
+            }
+        });
+
+        cardView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event for CardView 4
+                Intent intent = new Intent(requireContext(), BuyActivity.class);
+                intent.putExtra("name", "Brown Chinos");
+                intent.putExtra("image", R.drawable.img_8);
+                startActivity(intent);
             }
         });
 
@@ -123,14 +174,6 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), HistoryActivity.class);
-                ArrayList<Parcelable> parcelableList = new ArrayList<>();
-
-                // Convert the List<Item> to List<Parcelable>
-                for (Item item : dashboardItems) {
-                    parcelableList.add((Parcelable) item);
-                }
-
-                intent.putParcelableArrayListExtra("dashboardItems", parcelableList);
                 startActivity(intent);
             }
         });

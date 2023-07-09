@@ -1,8 +1,5 @@
 package com.example.c53;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GridItem {
 
     private int imageResource;
